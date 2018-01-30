@@ -1,0 +1,109 @@
+package gxa.servlet;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.sql.ResultSet;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import Conn.Conn;
+
+public class GreenHouseS extends HttpServlet {
+	String option;
+	Conn conn;// 一个类的多个方法都要使用的变量做成员变量，只有一个方法使用的变量局部
+
+	public GreenHouseS() {
+		super();
+		conn = new Conn();// 成员变量都在构造方法中初始化 new
+	}
+
+	/**
+	 * Destruction of the servlet. <br>
+	 */
+	public void destroy() {
+		super.destroy(); // Just puts "destroy" string in log
+		// Put your code here
+	}
+
+	public void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		option = request.getParameter("option");
+		doPost(request, response);// 当我们需要手动在地址栏输出参数进行测试
+	}
+
+	public void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		request.setCharacterEncoding("utf-8");
+		option = request.getParameter("option");
+		response.setContentType("text/html");
+		response.setCharacterEncoding("utf-8");
+		
+		PrintWriter out = response.getWriter();
+		// 代表向用户输出
+		String sql = "";
+		if (option.equals("list")) {
+			sql = "select * from GreenHouse";
+			ResultSet rs = conn.select(sql);
+			request.setAttribute("rs", rs);// 将获得的结果集存放到用户的请求属性中取名叫rs
+			request.getRequestDispatcher("greenhouse/list.jsp").forward(request,
+					response);
+			// 代表用户浏览器跳转到指定页面
+		} else if (option.equals("add")) {
+			String greenHouseNo = request.getParameter("greenHouseNo");
+			String greenHouseName = request.getParameter("greenHouseName");
+			String soilType = request.getParameter("soilType");
+			String xCoordinates = request.getParameter("xCoordinates");
+			String yCoordinates = request.getParameter("yCoordinates");
+			String area = request.getParameter("area");
+			String useState = request.getParameter("useState");
+			sql = "insert into GreenHouse(GreenHouseNo,GreenHouseName,SoilType,XCoordinates,YCoordinates,Area,UseState) VALUES('"+greenHouseNo+"','"+greenHouseName+"','"+soilType+"','"+xCoordinates+"','"+yCoordinates+"','"+area+"','"+useState+"')";
+			int rs = conn.update(sql);
+			System.out.println(sql);
+			if(rs>0){
+				out.println("<script>alert('增加成功');window.location.href='GreenHouseS?option=list'</script>");
+			}else{
+				out.println("<script>alert('增加失败，录入的数据可能已存在');window.location.href='GreenHouseS?option=list'</script>");
+			}
+		
+		} else if (option.equals("update")) {
+			String greenHouseNo = request.getParameter("greenHouseNo");
+			String greenHouseName = request.getParameter("greenHouseName");
+			String soilType = request.getParameter("soilType");
+			String xCoordinates = request.getParameter("xCoordinates");
+			String yCoordinates = request.getParameter("yCoordinates");
+			String area = request.getParameter("area");
+			String useState = request.getParameter("useState");	
+     	    sql = "update GreenHouse set GreenHouseNo='"+greenHouseNo+"',GreenHouseName='"+greenHouseName+"',SoilType='"+soilType+"',XCoordinates='"+xCoordinates+"',YCoordinates='"+yCoordinates+"',Area='"+area+"' ,UseState='"+useState+"'  where GreenHouseNo='"+greenHouseNo+"'";
+			System.out.println(sql);
+			int rs = conn.update(sql);
+			if(rs>0){
+				out.println("<script>alert('修改成功');window.location.href='GreenHouseS?option=list'</script>");
+			}else{
+				out.println("<script>alert('修改失败，数据可能不存在');window.location.href='GreenHouseS?option=list'</script>");
+			}
+		
+		} else if (option.equals("delete")) {
+			out.println(option);
+		}else 	if (option.equals("find")) {
+			String greenHouseNo = request.getParameter("greenHouseNo");
+			sql = "select * from GreenHouse where GreenHouseNo='"+greenHouseNo+"'";
+			System.out.println(sql);
+			ResultSet rs = conn.select(sql);
+			request.setAttribute("rs", rs);// 将获得的结果集存放到用户的请求属性中取名叫rs
+			request.getRequestDispatcher("greenhouse/update.jsp").forward(request,
+					response);
+			// 代表用户浏览器跳转到指定页面
+		}
+		out.flush();
+		out.close();
+		
+	}
+
+	public void init() throws ServletException {
+		// Put your code here
+	}
+
+}

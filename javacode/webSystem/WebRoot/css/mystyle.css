@@ -1,0 +1,32 @@
+.background-body{
+    		background: url(../image/background.jpg)
+    		no-repeat center center fixed;
+    		background-size: cover;
+    	}
+.container{
+	padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+.Htop{
+	height: 200px;
+}
+.Hleft{
+	width: 600px;
+	float: left;
+}
+.Hright-top p{
+	font-size: 2em;
+	text-align: center;
+	color: white;
+}
+.Hright-cent{
+		text-align: center;
+	    color: white;
+}
+.from-grop{
+	    margin-right: -15px;
+    margin-left: -15px;
+        margin-bottom: 15px;
+}	

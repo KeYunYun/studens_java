@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	var cities=[
+	["请选择"],["青岛","济南","烟台"],
+	["杭州","宁波","温州"],
+	["南京","无锡","苏州"]
+	];
+	
+	function change(){
+		var province =document.getElementById("province");
+		var pindex=province.value;
+		var city=document.getElementById("city");
+		/*var options=city.getElementsByTagName("option");
+		for(var i=0;i<options.length;i++){
+			options[i].parentNode.removeChild(options[i]);
+			
+		}*/
+		city.innerHTML="";
+		
+		var pcites=cities[pindex];
+		for(var i=0;i<pcites.length;i++){
+			var option=document.createElement("option");
+			option.setAttribute("value",i );
+			option.innerHTML=pcites[i];
+			city.appendChild(option);
+		}
+	}
+</script>
+</head>
+<body>
+	省：
+	<select id="province"
+		onchange="change();">
+		<!-- onchange 当选择好后触发 -->>
+		<option value="0">请选择</option>
+		<option value="1">山东省</option>
+		<option value="2">浙江省</option>
+		<option value="3">江苏省</option>
+	</select>
+	&nbsp;&nbsp;&nbsp;&nbsp;
+	市
+	<select id="city">
+		<option >请选择</option>
+	</select>
+</body>
+</html>

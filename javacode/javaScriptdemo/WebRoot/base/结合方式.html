@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function f1(){
+	alert("你好a");
+	}
+</script>
+<script type="text/javascript" 
+src="../js/fist.js"></script>
+</head>
+<body>
+	<!-- 直接写在标签里面 -->
+	<input type="button"   value="按键1"
+	onclick="alert('你好啊')"/>
+	<!-- 将js嵌入到当前页面内，直接调用 -->
+	<input type="button"  value="按键2"
+	onclick="f1();"/>
+	<!-- 将js文件写在单独的js文件中在调用 -->
+	<input type="button"  value="按键3"
+	onclick="f2();"/>
+</body>
+</html>

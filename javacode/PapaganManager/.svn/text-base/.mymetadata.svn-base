@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-module
+  type="WEB"
+  name="PapaganManager"
+  id="myeclipse.1483585679914"
+  context-root="/PapaganManager"
+  j2ee-spec="5.0"
+  archive="PapaganManager.war">
+  <attributes>
+    <attribute name="webrootdir" value="WebRoot" />
+  </attributes>
+</project-module>
+

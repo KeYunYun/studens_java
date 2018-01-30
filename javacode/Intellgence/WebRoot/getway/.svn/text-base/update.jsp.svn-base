@@ -1,0 +1,50 @@
+<%@ page language="java" import="java.util.*" pageEncoding="utf-8" contentType="text/html; charset=utf-8"%>
+<%@page import="java.sql.ResultSet"%>
+<%
+String path = request.getContextPath();
+String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
+%>
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <base href="<%=basePath%>">
+    
+    <title>My JSP 'update.jsp' starting page</title>
+    
+	<meta http-equiv="pragma" content="no-cache">
+	<meta http-equiv="cache-control" content="no-cache">
+	<meta http-equiv="expires" content="0">    
+	<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+	<meta http-equiv="description" content="This is my page">
+	 <link rel="stylesheet" href="css/style.css">
+	
+     <script src="http://www.my97.net/dp/My97DatePicker/WdatePicker.js"></script>
+  </head>
+  
+  <body>
+  
+    <form action="GetwayS" method="post">
+      <%
+     ResultSet rs = (ResultSet)request.getAttribute("rs");
+     if(rs.next()){
+    %> 
+      <table align="center" width="400">
+      <tr class="Tr"><td>网关ID:</td> <td><input type="text" name="gateway_id" id="gateway_id" value="<%=rs.getString(1)%>"/></td></tr>
+<tr class="Tr"><td>工作模式:</td><td><input type="text" name="work_mod" id="work_mod" value="<%=rs.getString(2)%>"/></td></tr>
+<tr class="Tr"><td>网关端口:</td><td><input type="text" name="gateway_port" id="gateway_port" value="<%=rs.getString(3)%>"/></td></tr>
+<tr class="Tr"><td>网关地址:</td><td><input type="text" name="gateway_logo" id="gateway_logo" value="<%=rs.getString(4)%>"/></td></tr>
+<tr class="Tr"><td>标识:</td><td><input type="text" name="poll_interval" id="poll_interval" value="<%=rs.getString(5)%>"/></td></tr>
+<tr class="Tr"><td>延时:</td><td><input type="text" name="timeout" id="timeout" value="<%=rs.getString(6)%>"/></td></tr>
+       <tr><td><input type="hidden" name="option" value="update"/></td></tr>
+       <tr><td><input type="submit" value="修改网关信息" id="xg"/>
+       &nbsp; &nbsp;  &nbsp;  
+       <input type="reset" value="重置" id="rs"/>
+       
+       </td></tr>
+      </table>
+       <%}%>
+    </form>
+   
+  </body>
+</html>

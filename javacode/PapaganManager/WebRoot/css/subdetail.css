@@ -1,0 +1,20 @@
+*{margin:0;padding:0;}
+.clearfix:after{content: ".";display: block;height: 0;clear: both;visibility: hidden;}
+.clearfix{zoom:1;}
+ul,li{list-style:none;}
+img{border:0;}
+.wrapper{width:100px;margin:0 auto;}
+/* focus */
+#subfocus{margin-top:5px;}
+#subfocus{width:100px;height:70px;overflow:hidden;position:relative;}
+#subfocus ul{height:70px;position:absolute;}
+#subfocus ul li{float:left;width:100px;height:70px;overflow:hidden;position:relative;background:#000;}
+#subfocus ul li img{width:100px;height:70px;}
+#subfocus ul li div{position:absolute;overflow:hidden;}
+#subfocus .btnBg{position:absolute;width:100px;height:20px;left:0;bottom:0;background:#000;}
+#subfocus .btn{position:absolute;width:80px;height:10px;padding:5px 10px;right:0;bottom:0;text-align:right;}
+#subfocus .btn span{display:inline-block;_display:inline;_zoom:1;width:25px;height:10px;_font-size:0;margin-left:5px;cursor:pointer;background:#fff;}
+#subfocus .btn span.on{background:#fff;}
+#subfocus .preNext{width:45px;height:100px;position:absolute;top:90px;background:url(../img/sprite.png) no-repeat 0 0;cursor:pointer;}
+#subfocus .pre{left:0;}
+#subfocus .next{right:0;background-position:right top;}

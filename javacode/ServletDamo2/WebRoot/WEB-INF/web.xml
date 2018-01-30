@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE web-app PUBLIC "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN" "http://java.sun.com/dtd/web-app_2_3.dtd">
+<web-app>
+	<context-param>
+		<param-name>name</param-name>
+		<param-value>jerry</param-value>
+	</context-param>
+	<context-param>
+		<param-name>age</param-name>
+		<param-value>18</param-value>
+	</context-param>
+  <servlet>
+    <servlet-name>Myservlet</servlet-name>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <description>This is the description of my J2EE component</description>
+    <servlet-class>frist.text.Myservlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>Hservlet</servlet-name>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <description>This is the description of my J2EE component</description>
+    <servlet-class>frist_text_2.Hservlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>A</servlet-name>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <description>This is the description of my J2EE component</description>
+    <servlet-class>response.A</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>Bservlet</servlet-name>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <description>This is the description of my J2EE component</description>
+    <servlet-class>response.Bservlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>Cservlet</servlet-name>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <description>This is the description of my J2EE component</description>
+    <servlet-class>response.Cservlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>Dservlet</servlet-name>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <description>This is the description of my J2EE component</description>
+    <servlet-class>response.Dservlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>Eservlet</servlet-name>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <description>This is the description of my J2EE component</description>
+    <servlet-class>response.Eservlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>Ftupian</servlet-name>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <description>This is the description of my J2EE component</description>
+    <servlet-class>response.Ftupian</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>RBservlet</servlet-name>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <description>This is the description of my J2EE component</description>
+    <servlet-class>request.RBservlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>ACservlet</servlet-name>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <description>This is the description of my J2EE component</description>
+    <servlet-class>Cookie.ACservlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>BCservlet</servlet-name>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <description>This is the description of my J2EE component</description>
+    <servlet-class>Cookie.BCservlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>Hservrlet</servlet-name>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <description>This is the description of my J2EE component</description>
+    <servlet-class>Cookie.hostry.Hservrlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>RFservlet</servlet-name>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <description>This is the description of my J2EE component</description>
+    <servlet-class>remerberUserName.RFservlet</servlet-class>
+  </servlet>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <servlet-mapping>
+    <servlet-name>Myservlet</servlet-name>
+    <url-pattern>/servlet/Myservlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>Hservlet</servlet-name>
+    <url-pattern>/servlet/Hservlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>A</servlet-name>
+    <url-pattern>/servlet/A</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>Bservlet</servlet-name>
+    <url-pattern>/servlet/Bservlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>Cservlet</servlet-name>
+    <url-pattern>/servlet/Cservlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>Dservlet</servlet-name>
+    <url-pattern>/servlet/Dservlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>Eservlet</servlet-name>
+    <url-pattern>/servlet/Eservlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>Ftupian</servlet-name>
+    <url-pattern>/servlet/Ftupian</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>RBservlet</servlet-name>
+    <url-pattern>/servlet/RBservlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ACservlet</servlet-name>
+    <url-pattern>/servlet/ACservlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>BCservlet</servlet-name>
+    <url-pattern>/servlet/BCservlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>Hservrlet</servlet-name>
+    <url-pattern>/servlet/Hservrlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>RFservlet</servlet-name>
+    <url-pattern>/servlet/RFservlet</url-pattern>
+  </servlet-mapping>
+
+</web-app>

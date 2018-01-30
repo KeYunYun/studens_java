@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="../js/jquery-3.1.1.js">
+</script>
+<script type="text/javascript">
+	function f1(){
+		//通过选择器，选中一些节点，得到jQuery对象
+		var ps=$("p");
+		//得到p的数值
+		for(var i=0;i<ps.length;i++){
+		//ps[i]等价于ps.get(i);
+		//这两种方式返回的都是DOM对象
+		//而不是jQuery对象，不能直接调用jQuery对象
+		var p=ps.get(i);
+		alert(p.innerText);
+		}
+	}
+	//参数img接收传入的this，当前正在点击的图片节点
+	//他是DOM对象
+	function f2(img){
+	//	jQuery对象有width（），height（）方法
+	//课直接获得、修改，
+	//要调用这两个方法，先要将DOM对象转换为jQuery对象
+	$(img).width(400).height(400);//带参数为修改，不带获得
+	
+	}
+	
+</script>
+
+</head>
+<body>
+	<h1>jQuery对象</h1>
+	<p> 1.jQuery统一封装的对象</p>
+	<p> 2.jQuery选择器选择的结果是jQuery对象</p>
+	<p> 3.jQuery对象本质上是一个DOM数值</p>
+	<div>
+		<button onclick="f1();">按钮1</button>
+	</div>
+	<div>
+		<img  src="../images/f1.jpg" width="218" height="200" onclick="f2(this);">
+		<img  src="../images/f2.jpg" width="218" height="200" onclick="f2(this);">
+		<img  src="../images/f3.jpg" width="218" height="200" onclick="f2(this);">
+	</div>
+</body>
+</html>

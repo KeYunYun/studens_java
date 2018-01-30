@@ -1,0 +1,73 @@
+<%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
+<%
+String path = request.getContextPath();
+String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
+%>
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <base href="<%=basePath%>">
+    
+    <title>My JSP 'add.jsp' starting page</title>
+    
+	<meta http-equiv="pragma" content="no-cache">
+	<meta http-equiv="cache-control" content="no-cache">
+	<meta http-equiv="expires" content="0">    
+	<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+	<meta http-equiv="description" content="This is my page">
+	 <script src="http://www.my97.net/dp/My97DatePicker/WdatePicker.js"></script>
+	 <link rel="stylesheet" href="css/style.css">
+	 <script type="text/javascript">
+	 function checkform(){
+ $operateType=document.getElementById("operateType").value;
+ $greenHouseNo=document.getElementById("greenHouseNo").value;
+ if($operateType=='')
+ {
+  alert("操作类型不能为空");
+  return false;
+ }
+  if($greenHouseNo=='')
+ {
+  alert("温室编号不能为空");
+  return false;
+ }
+ return true;
+}
+	 </script>
+  </head>
+  
+  <body>
+  
+<form action="OperateS" method="POST" onsubmit="return checkform()">
+
+<table width="280" align="center" cellpadding="0" cellspacing="0">
+<tr class="Tr"><td>操作类型:</td> <td>
+<select name="operateType" id="operateType" >
+<option value="null"></option>
+<option value="锄草">锄草</option>
+<option value="施肥">施肥</option>
+<option value="剪枝">剪枝</option>
+<option value="杀虫">杀虫</option>
+</select>
+
+</td></tr>
+<tr class="Tr"><td>温室编号:</td><td><input type="text" name="greenHouseNo" id="greenHouseNo"/></td></tr>
+<tr class="Tr"><td>员工编号:</td><td><input type="text" name="employeeNo" id="employeeNo" /></td></tr>
+<tr class="Tr"><td>操作时间:</td><td><input type="text" name="operateDate"  id="operateDate" onclick="WdatePicker()"/></td></tr>
+<tr class="Tr"><td>生长状况:</td><td><input type="text" name="growthSituation" id="growthSituation"/></td></tr>
+
+<input type="hidden" name="option" value="add" />
+
+<tr><td colspan="2" align="center"><input type="submit"value="插入" id="cr"/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<input type="reset"value="重置" id="rs"/>
+</td></tr>
+
+</table>
+
+</form>
+
+
+  </body>
+</html>

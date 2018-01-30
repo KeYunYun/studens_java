@@ -1,0 +1,95 @@
+<%@ page language="java" import="java.util.*" pageEncoding="utf-8"  contentType="text/html; charset=utf-8"  %>
+<%@page import="java.sql.ResultSet"%>
+
+<%
+
+String path = request.getContextPath();
+String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
+%>
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <base href="<%=basePath%>">
+    
+    <title>My JSP 'show.jsp' starting page</title>
+    
+	<meta http-equiv="pragma" content="no-cache">
+	<meta http-equiv="cache-control" content="no-cache">
+	<meta http-equiv="expires" content="0">    
+	<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+	<meta http-equiv="description" content="This is my page">
+	 <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/pintuer.css">
+    <style>
+     .cg > table  tr:nth-child(1) > td:nth-child(1){
+       width:120px;
+     
+      }
+         .cg > table  tr:nth-child(1) > td:nth-child(2){
+       width:80px;
+       
+      }
+         .cg> table  tr:nth-child(1) > td:nth-child(3){
+       width:80px;
+      }
+         .cg > table  tr:nth-child(1) > td:nth-child(4){
+       width:80px;
+      }
+         .cg > table  tr:nth-child(1) > td:nth-child(5){
+       width:110px;
+       
+      }
+       .cg > table  tr:nth-child(1) > td:nth-child(6){
+       width:110px;}
+        .cg > table  tr{
+        line-height:50px;
+        }
+         .cg > table  tr td{
+       border:#000 1px solid;
+        }
+         .cg> table  tr td a{
+        text-decoration: none;
+        color:#000;
+        }
+      .cg> table  tr td a:hover{color:#0C6;} 
+     
+    </style>
+  </head>
+  
+  <body>
+  <div class="cg">
+ <table  align="center">
+        <tr>
+          <td>网关ID</td>
+          <td>工作模式</td>
+          <td>网关端口</td>
+          <td>网关地址</td>
+          <td>标识</td>
+          <td>延时</td>
+          <td>操作</td>
+      </tr>
+    <%
+    ResultSet rs = (ResultSet)request.getAttribute("rs");
+    while(rs.next()){//如果结果集中还有下一条就 继续循环
+    %>
+       <!-- 下面这句表示在页面输出 -->
+      <tr>
+        <%String gateway_id = rs.getString(1);%>
+            <td><%=gateway_id%></td>
+          <td><%= rs.getString(2)%></td>
+          <td><%= rs.getString(3)%></td>
+          <td><%= rs.getString(4)%></td>
+          <td><%= rs.getString(5)%></td>
+          <td><%= rs.getString(6)%></td>     
+            <td  class="up"><a href="GetwayS?option=find&gateway_id=<%=gateway_id%>">修改</a></td> 
+      </tr>     
+       <%
+      }
+     %>
+    </table> 
+    </div>
+  </body>
+</html>
+
+

@@ -1,0 +1,48 @@
+<%@ page language="java" import="java.util.*" pageEncoding="utf-8" contentType="text/html; charset=utf-8"%>
+<%@page import="java.sql.ResultSet"%>
+<%
+String path = request.getContextPath();
+String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
+%>
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <base href="<%=basePath%>">
+    
+    <title>My JSP 'update.jsp' starting page</title>
+    
+	<meta http-equiv="pragma" content="no-cache">
+	<meta http-equiv="cache-control" content="no-cache">
+	<meta http-equiv="expires" content="0">    
+	<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+	<meta http-equiv="description" content="This is my page">
+	 <link rel="stylesheet" href="css/style.css">
+	
+     <script src="http://www.my97.net/dp/My97DatePicker/WdatePicker.js"></script>
+  </head>
+  
+  <body>
+  
+    <form action="RecordS" method="post">
+      <%
+     ResultSet rs = (ResultSet)request.getAttribute("rs");
+     if(rs.next()){
+    %> 
+      <table align="center" width="400">
+       <tr class="Tr"><td>记录编号：<input type="text" name="recondsNo" value="<%=rs.getString(1)%>" /></td></tr>
+       <tr class="Tr"><td>记录时间：<input type="text" name="recondsTime" value="<%=rs.getDate(2)%>"  onclick="WdatePicker()"/></td></tr>
+       <tr class="Tr"><td>管理员姓名：<input type="text" name="mosterName" value="<%=rs.getString(3)%>"/></td></tr>
+       <tr class="Tr"><td>机器编号：<input type="text" name="machineNo" value="<%=rs.getString(4)%>"  /></td></tr>
+       <tr><td><input type="hidden" name="option" value="update"/></td></tr>
+       <tr><td><input type="submit" value="修改温室信息" id="xg"/>
+       &nbsp; &nbsp;  &nbsp;  &nbsp;  &nbsp;
+       <input type="reset" value="重置" id="rs"/>
+       
+       </td></tr>
+      </table>
+       <%}%>
+    </form>
+   
+  </body>
+</html>

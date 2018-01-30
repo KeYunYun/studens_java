@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>计算平方</title>
+<script type="text/javascript">
+	function cal(){
+	var input = document.getElementById("num");
+	var span = document.getElementById("result");
+	var num=input.value;
+	if(num==""||isNaN(num)){
+	span.innerHTML="请输入数字";
+	}else{
+	span.innerHTML=num*num;
+	}
+	
+	}
+</script>
+</head>
+<body>
+	<input type="text" id="num"
+	value="请输入数字">
+	<input type="button" value="平方"
+	onclick="cal();">
+	= <span  id="result">   </span>
+</body>
+</html>

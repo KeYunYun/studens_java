@@ -1,0 +1,90 @@
+@CHARSET "UTF-8";
+body { background:#fff; color:#555; font-size:14px; font-family: Verdana, Arial, Helvetica, sans-serif; }
+td,th,caption { font-size:16px; }
+h1, h2, h3, h4, h5, h6 { font-weight:normal; font-size:100%; }
+address, caption, cite, code, dfn, em, strong, th, var { font-style:normal; font-weight:normal;}
+a{ text-decoration:none; }
+a:hover { text-decoration:underline; }
+img { border:none; }
+ol,ul,li { list-style:none; }
+input, textarea, select, button { font:14px Verdana,Helvetica,Arial,sans-serif; }
+table { border-collapse:collapse; }
+html {overflow-y: scroll;}
+.Tr{line-height:60px;}
+#cr{ width:60px;height:20px;}
+#rs{ width:60px;height:20px;}
+
+.by{ 
+  
+
+  width:600px;
+  margin:0 auto;
+ 
+ 
+  }
+
+table{ 
+  color:#0000;
+  border-collapse:collapse;border:none; 
+  text-align: center;
+  
+ 
+  
+}
+table td{}
+ .by > table tr{
+   font-family:微软雅黑;
+ }
+ .by > table  tr:nth-child(1){
+     
+      height:48;
+      font-size: 18;
+      }
+       .by >table tr{
+        line-height:50px;
+       }
+  .by >table tr td{
+ border:1px solid #CACAD9;
+
+
+  }
+ .by > table  tr:nth-child(1) > td:nth-child(1){
+       width:120px;
+     
+      }
+         .by > table  tr:nth-child(1) > td:nth-child(2){
+       width:80px;
+       
+      }
+         .by > table  tr:nth-child(1) > td:nth-child(3){
+       width:80px;
+      }
+         .by > table  tr:nth-child(1) > td:nth-child(4){
+       width:80px;
+      }
+         .by > table  tr:nth-child(1) > td:nth-child(5){
+       width:110px;
+       
+      }
+       .by > table  tr:nth-child(1) > td:nth-child(6){
+       width:110px;}
+       .up{
+        width:80px;     
+       }
+       .by > table  tr:nth-child(1){
+     
+      height:48;
+      font-size: 18;
+      }
+       .by >table tr{
+        line-height:50px;
+       }
+  .by >table tr td{
+ border:1px solid #CACAD9;
+
+
+  }
+       body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,button,textarea,p,blockquote,th,td { margin:0; padding:0; }
+#xg{width:100px; height:20px;}
+#operateType{width:160px;}
+#employeesex{width:60px;}

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>阶乘</title>
+<script type="text/javascript">
+	function cal(){
+	var input =document.getElementById("num");
+	var span=document.getElementById("result");
+	var num=input.value;
+	var n=1;
+	if(num==""||isNaN(num)){
+		span.innerHTML="请输入数字";
+	}else{
+		for(var i=1;i<=num;i++){
+		n=i*n;
+		}
+		span.innerHTML=n;
+	}
+	}
+</script>
+</head>
+<body>
+	<input type="text" id="num">
+	<input type="button" value="阶乘"
+	onclick="cal()">=
+	<span id="result"></span>
+</body>
+</html>

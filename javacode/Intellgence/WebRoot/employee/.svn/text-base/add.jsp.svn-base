@@ -1,0 +1,75 @@
+<%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
+<%
+String path = request.getContextPath();
+String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
+%>
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <base href="<%=basePath%>">
+    
+    <title>My JSP 'add.jsp' starting page</title>
+    
+	<meta http-equiv="pragma" content="no-cache">
+	<meta http-equiv="cache-control" content="no-cache">
+	<meta http-equiv="expires" content="0">    
+	<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+	<meta http-equiv="description" content="This is my page">
+	 <script src="http://www.my97.net/dp/My97DatePicker/WdatePicker.js"></script>
+	 <link rel="stylesheet" href="css/style.css">
+	 <script type="text/javascript">
+	 function checkform(){
+ $employeeName=document.getElementById("employeeName").value;
+ $employeesex=document.getElementById("employeesex").value;
+ if($employeeName=='')
+ {
+  alert("员工姓名不能为空");
+  return false;
+ }
+
+ if($employeesex=='null')
+ {
+  alert("员工性别不能为空");
+  return false;
+ }
+ return true;
+}
+	 </script>
+  </head>
+  
+  <body>
+  
+<form action="EmployeeS" method="POST" onsubmit="return checkform()">
+
+<table width="280" align="center" cellpadding="0" cellspacing="0">
+
+<tr class="Tr"><td>员工编号:</td> <td><input type="text" name="employeeNo" id="employeeNo" /></td></tr>
+<tr class="Tr"><td>员工姓名:</td> <td><input type="text" name="employeeName" id="employeeName" /></td></tr>
+<tr class="Tr"><td>员工性别:</td><td>
+<select name="employeesex" id="employeesex" >
+<option value="null"></option>
+<option value="男">男</option>
+<option value="女">女</option>
+</select>
+</td></tr>
+
+<tr class="Tr"><td>员工生日:</td><td><input type="text" name="employeebirthday" id="employeebirthday" onclick="WdatePicker()"/></td></tr>
+<tr class="Tr"><td>员工类型:</td><td><input type="text" name="employeeType"  id="employeeType" /></td></tr>
+<tr class="Tr"><td>工作年份:</td><td><input type="text" name="workYear"  id="workYear" /></td></tr>
+<tr class="Tr"><td>员工状态:</td><td><input type="text" name="employeestate" id="employeestate" /></td></tr>
+<tr class="Tr"><td>上司姓名:</td><td><input type="text" name="mosterName" id="mosterName" /></td></tr>
+<input type="hidden" name="option" value="add" />
+
+<tr><td colspan="2" align="center"><input type="submit"value="插入" id="cr"/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<input type="reset"value="重置" id="rs"/>
+</td></tr>
+
+</table>
+
+</form>
+
+
+  </body>
+</html>

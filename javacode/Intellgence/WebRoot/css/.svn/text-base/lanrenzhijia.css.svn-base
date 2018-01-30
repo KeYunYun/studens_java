@@ -1,0 +1,17 @@
+/*********************************
+@CHARSET "UTF-8";
+Design by Jason.leung,
+QQ,147430218
+鏂版氮寰崥,@鍒囩墖楹靛寘
+Email, jason.leung58@icloud.com
+*********************************/
+/* 浠ｇ爜鏁寸悊锛氭噿浜轰箣瀹�www.lanrenzhijia.com */
+* {margin:0px; padding:0px; list-style: none;}
+#box {width:600px; height:570px; background:#fff; margin:50px auto; position: relative; overflow: hidden;z-index:5000;border:#000 2px solid;}
+#list {position:absolute; left:0; top:0;}
+#list li {width:490px; height:170px; cursor: pointer;}
+#num {position: absolute; right:10px; bottom:10px;}
+#num li {width:16px; height:16px; float:left; margin-right:2px; color:#fff; cursor: pointer; font-size: 12px; font-family:'Arial'; line-height:16px; text-align: center; border:1px solid #fff;}
+.active {background:#ff6600;}
+span {display: block; width:auto; text-align:center; color:red; font-size: 14px; font-family:'Arial';}
+#foot_bm a,p,p a{font-size:12px;color:#666;}

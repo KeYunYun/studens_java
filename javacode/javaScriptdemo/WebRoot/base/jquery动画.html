@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	#msg{
+		border:1px solid #ccc;
+		width:100px;
+		padding:10px;
+		text-align:center;
+		background-color:#ddd;
+		dispaly:none;
+	}
+</style>
+<script type="text/javascript" src="../js/jquery-3.1.1.js">
+</script>
+<script type="text/javascript">
+	$(function(){
+		$("#b1").click(f1);
+		$("#b2").click(f2);
+		$("#b3").click(f3);
+	});
+	
+	function f1(){
+		//$("img").show();
+		//$("img").slideDown(2000);
+		$("img").fadeIn(2000);
+	}
+	function f2(){
+		//$("img").hide();
+		//$("img").slideUp(2000);
+		$("img").fadeOut(2000);
+	}
+	function f3(){
+		$("#msg").fadeIn(2000).fateOut(2000);
+	}
+</script>
+</head>
+<body>
+	<p>
+		<button id="b1">显示</button>
+		<button id="b2">隐藏</button>
+		<button id="b3">提示</button>
+	</p>
+	<p>
+		<img src="../images/f1.jpg" width="300px" height="400px"> 
+	</p>
+	<p id="msg">
+		操作成功
+	</p>
+</body>
+</html>

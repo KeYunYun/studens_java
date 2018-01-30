@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE web-app PUBLIC "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN" "http://java.sun.com/dtd/web-app_2_3.dtd">
+<web-app>
+  <servlet>
+    <servlet-name>Login</servlet-name>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <description>This is the description of my J2EE component</description>
+    <servlet-class>login.Login</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>ImageIdent</servlet-name>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <description>This is the description of my J2EE component</description>
+    <servlet-class>login.ImageIdent</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>Ident</servlet-name>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <description>This is the description of my J2EE component</description>
+    <servlet-class>login.Ident</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>ShowManagerInfo</servlet-name>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <description>This is the description of my J2EE component</description>
+    <servlet-class>show.ShowManagerInfo</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>ClassRoomManager</servlet-name>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <description>This is the description of my J2EE component</description>
+    <servlet-class>classroom.ClassRoomManager</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>TimeTable</servlet-name>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <description>This is the description of my J2EE component</description>
+    <servlet-class>timetable.TimeTable</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>DealWithMessage</servlet-name>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <description>This is the description of my J2EE component</description>
+    <servlet-class>dealwithmessage.DealWithMessage</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>OperaterMessage</servlet-name>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <description>This is the description of my J2EE component</description>
+    <servlet-class>operatermessage.OperaterMessage</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>LEDNotices</servlet-name>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <description>This is the description of my J2EE component</description>
+    <servlet-class>notice.LEDNotices</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>CheckMessage</servlet-name>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <description>This is the description of my J2EE component</description>
+    <servlet-class>cheakmessage.CheckMessage</servlet-class>
+     <load-on-startup>1</load-on-startup>  
+  </servlet>
+
+
+
+
+
+
+
+
+
+
+  <servlet-mapping>
+    <servlet-name>Login</servlet-name>
+    <url-pattern>/servlet/Login</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ImageIdent</servlet-name>
+    <url-pattern>/servlet/ImageIdent</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>Ident</servlet-name>
+    <url-pattern>/servlet/Ident</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ShowManagerInfo</servlet-name>
+    <url-pattern>/ShowManagerInfo</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ClassRoomManager</servlet-name>
+    <url-pattern>/ClassRoomManager</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>TimeTable</servlet-name>
+    <url-pattern>/TimeTable</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>DealWithMessage</servlet-name>
+    <url-pattern>/DealWithMessage</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>OperaterMessage</servlet-name>
+    <url-pattern>/OperaterMessage</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>LEDNotices</servlet-name>
+    <url-pattern>/LEDNotices</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>CheckMessage</servlet-name>
+    <url-pattern>/CheckMessage</url-pattern>
+  </servlet-mapping>
+
+</web-app>

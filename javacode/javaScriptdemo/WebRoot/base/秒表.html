@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+	<style type="text/css">
+		#clock{
+			border:1px solid #ccc;
+			width:100px;
+			height:50px;
+			font-size:3em;
+		}
+	</style>
+	<script type="text/javascript">
+		var id;
+		var index=1;
+		
+		function start1(){
+		
+		id = setInterval(function() {
+			var p=document.getElementById("clock");
+			p.innerHTML=index++;
+			}, 1000)
+		}
+		function stop1(){
+			clearInterval(id);
+		}
+		function clear1(){
+			index=1;
+			clearInterval(id);
+			var p=document.getElementById("clock");
+			p.innerHTML=index;
+		}
+	</script>
+</head>
+<body>
+	<p id="clock"></p>
+	<p>
+		<button onclick="start1();">启动</button>
+		<button onclick="stop1();">暂停</button>
+		<button onclick="clear1();">清零</button>
+	</p>
+	
+</body>
+</html>

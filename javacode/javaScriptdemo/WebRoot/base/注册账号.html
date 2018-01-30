@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	form{
+		width:50%;
+		padding:10px;
+		margin:100px auto;
+		border:1px solid #ccc;
+	}
+	p{
+		font-size:20px;
+	}
+	input{
+		width:200px;
+		height:30px;
+	}
+	.ok{
+		color:green;
+		border:1px solid green;
+	}
+	.error{
+		color:red;
+		border:1px solid red;
+	}
+</style>
+<script type="text/javascript" src="../js/jquery-3.1.1.js">
+</script>
+<script type="text/javascript">
+	$(function(){
+		$("#code").blur(check_code);
+	});
+	function check_code(){
+		var code =$("#code").val();
+		var reg=/^\w{3,20}$/;
+		if(!reg.test(code)){
+			$("#code_msg").remove("ok").addClass("error");
+		}else{
+			$("#code_msg").remove("error").addClass("ok");
+		}
+	}
+</script>
+</head>
+<body>
+	<form action="#">
+		<h1>注册账号</h1>
+		<p>
+			账&nbsp;&nbsp;&nbsp;&nbsp;号：
+			<input type="text" id="code">
+			<span id="code_msg">3-20位数字字符</span>
+		</p>
+		<p>
+			密&nbsp;&nbsp;&nbsp;&nbsp;码：
+			<input type="password">
+			<span>3-20位数字字符</span>
+		</p>
+		<p>
+			确认密码：
+			<input type="password">
+			<span>再次输入密码</span>
+		</p>
+		<p>
+			邮&nbsp;&nbsp;&nbsp;&nbsp;箱：
+			<input type="text">
+			<span>请输入你的邮箱</span>
+		</p>
+		<p>
+			手机号码：
+			<input type="text">
+			<span>请输入你的手机号</span>
+		</p>
+		<p align="center">
+			<input type="submit" value="注册">
+			
+		</p>
+	</form>
+</body>
+</html>

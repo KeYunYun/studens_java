@@ -1,0 +1,59 @@
+<%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
+<%
+String path = request.getContextPath();
+String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
+%>
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <base href="<%=basePath%>">
+    
+    <title>My JSP 'add.jsp' starting page</title>
+    
+	<meta http-equiv="pragma" content="no-cache">
+	<meta http-equiv="cache-control" content="no-cache">
+	<meta http-equiv="expires" content="0">    
+	<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+	<meta http-equiv="description" content="This is my page">
+	 <script src="http://www.my97.net/dp/My97DatePicker/WdatePicker.js"></script>
+	 <link rel="stylesheet" href="css/style.css">
+	 <script type="text/javascript">
+	 function checkform(){
+ $recondsTime=document.getElementById("recondsTime").value;
+ $machineNo=document.getElementById("machineNo").value;
+ if($recondsTime=='')
+ {
+  alert("记录时间不能为空");
+  return false;
+ }
+
+ if($machineNo=='null')
+ {
+  alert("机器编号不能为空");
+  return false;
+ }
+ return true;
+}
+	 </script>
+  </head>
+  
+  <body>
+  
+<form action="RecordS" method="POST" onsubmit="return checkform()">
+
+<table width="280" align="center" cellpadding="0" cellspacing="0">
+<tr class="Tr"><td>记录时间:</td> <td><input type="text" name="recondsTime" id="recondsTime"  onclick="WdatePicker()"/></td></tr>
+<tr class="Tr"><td>管理员姓名:</td><td><input type="text" name="mosterName" id="mosterName" /></td></tr>
+<tr class="Tr"><td>机器编号:</td><td><input type="text" name="machineNo" id="machineNo"/></td></tr>
+<input type="hidden" name="option" value="add" />
+<tr><td colspan="2" align="center"><input type="submit"value="插入" id="cr"/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<input type="reset"value="重置" id="rs"/>
+</td></tr>
+</table>
+</form>
+
+
+  </body>
+</html>

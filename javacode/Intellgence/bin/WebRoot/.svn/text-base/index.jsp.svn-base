@@ -1,0 +1,154 @@
+<%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
+<%
+String path = request.getContextPath();
+String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
+%>
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <base href="<%=basePath%>">
+    
+    <title>My JSP 'index.jsp' starting page</title>
+	<meta http-equiv="pragma" content="no-cache">
+	<meta http-equiv="cache-control" content="no-cache">
+	<meta http-equiv="expires" content="0">    
+	<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+<meta name="renderer" content="webkit">
+		<!--国产浏览器高速模式-->
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="author" content="Yao Longfei" />
+		<!-- 作者 -->
+		<meta name="revised" content="Yao.v1, 2016/7/11" />
+		<!-- 定义页面的最新版本 -->
+		<meta name="description" content="网站简介" />
+		<!-- 网站简介 -->
+		<meta name="keywords" content="搜索关键字，以半角英文逗号隔开" />
+		<!-- 搜索关键字 -->
+		<title></title>
+		<!-- 基础样式文件 开始 -->
+		<link href="css/bootstrap.css" rel="stylesheet" type="text/css">
+		<link href="css/base.css" rel="stylesheet" type="text/css">
+		<link href="css/index.css" rel="stylesheet" type="text/css"> 
+		<script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+		<script type="text/javascript" src="js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="js/base.js"></script>
+		<script type="text/javascript" src="js/index.js"></script>
+		<!-- 轮播图 开始 -->
+		<script type="text/javascript" src="js/lb_jcfc.js"></script>
+		<link href="css/lbt1.css" rel="stylesheet" type="text/css">
+		<script type="text/javascript" src="js/lbt1.js"></script>
+  </head>
+  
+<body style="background-color:#f2f9fd;">
+		<!-- main 开始 -->
+		<div class="main">
+			<div class="main_box">
+
+				<!-- logo 开始 -->
+				<div class="logo">
+               <div class="lg"> <img src="img/logo.png.png">
+               <img  src="img/index/ti.fw.png">
+               
+               </div>
+                </div>
+				<!-- logo 结束 -->
+	
+				<!-- banner 开始 -->
+				<div class="banner">
+					<ul>
+						<li class="right_border"><a href="index.html">网站首页</a></li>
+						<li class="right_border"><a href="list_pic.html">园区概况</a></li>
+						<li class="right_border"><a href="list_wz.html">产品中心</a></li>
+						<li class="right_border"><a href="">关于我们</a></li>
+                        <li><a href="admin/login.jsp">管理登录</a></li>
+                        
+					
+					</ul>
+				</div>
+				<!-- banner 结束 -->
+	
+				<!-- 搜索与微信 开始 -->
+				<div class="search_wx">
+					
+				</div>
+				<!-- 搜索与微信 结束 -->
+	
+				<!-- 新闻 开始 -->
+				<div class="news">
+					<div class="news_box1">
+						<div class="news_lb">
+							<div id="playBox">
+								<div class="pre"></div>
+								<div class="next"></div>
+								<div class="smalltitle">
+									<ul>
+										<li class="thistitle"></li>
+										<li></li>
+										<li></li>
+									</ul>
+								</div>
+								<ul class="oUlplay">
+									<li><a href="" target="_blank"><img src="img/1.7.jpg" ><p  style="margin-bottom:20px;">智能农业</p></a></li>
+									<li><a href="" target="_blank"><img src="img/1.2.jpg" ><p style="margin-bottom:20px;">智能农业</p></a></li>
+									<li><a href="" tsarget="_blank"><img src="img/1.5.jpg" ><p style="margin-bottom:20px;">智能农业</p></a></li>
+								</ul>
+							</div>
+						</div>
+						<div class="news_tzgg">
+							<div class="news_tzgg_title">
+								<font>产品中心</font><span><a href="">更多</a></span>
+							</div>
+							<div class="news_tzgg_content">
+								<ul>
+									
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="news_box2">
+						<div class="news_jfxw">
+							<div class="news_jfxw_title">
+								<font>系统概况</font><span><a href="">更多</a></span>
+							</div>
+							<div class="news_jfxw_content">
+							<p style="line-height:30px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;物联网智能农业系统是新一代农业发展的重中之重，本系统采用传感采集与智能控制设备的方式最各种农业环境进行智能化控制。物联网智能农业系统主要分为硬件板块和软件板块，硬件板块为各类传感器、通讯基础设施、作业模块构成；软件为可视化管理与控制平台。硬件用来感知和信息传输，软件用来识别与控制。本系统具有很高的拓展性和极高的使用价值，使用本系统可以帮助业主实时且有效的对各类农业环境进行监管与作业实现智能化，帮助业主节省人力成本，同时为消费者提供整个农业产品的的朔源渠道。</p>
+								<div class="focus">
+								
+								</div>
+								<ul>
+									
+								</ul>
+							</div>
+						</div>
+						<div class="news_mrjq">
+							<div class="news_tzgg_title">
+								<font>关于我们</font><span><a href="">更多</a></span>
+							</div>
+							<div class="news_tzgg_content">
+								<ul>
+								<p style="line-height:30px;">&nbsp;	&nbsp;&nbsp;&nbsp;物联网智能农业溯源系统是一个关于温室大棚的管理系统，此系统主要供应温室大棚，蔬菜大棚，花卉大棚，养殖大棚等，创造作物适宜的生长环境，目前达到同行业领先水平，广泛运用于春秋蔬菜大棚、反季节温室蔬菜大棚、智能化温室大棚、阳光板真空玻璃大棚、花卉大棚、食用菌种植大棚、各种育苗大棚、各种牲畜养殖大棚、生态观光餐厅等，我们所种植的作物都对其进行追踪，并为消费者提供产品的整个生长情况。我们秉着以诚信为原则，以创新为动力，以发展为目标，精诚协作。您的健康、你的满意是我们的追求。</p>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- 新闻 结束 -->
+	
+				<!-- 广告1 开始 -->
+				<!-- 广告1 结束 -->
+	
+				<!-- 政治工作等11个模块 开始 -->
+			
+				<!-- banner 结束 -->
+	
+				<!-- bottom 开始 -->
+				<div class="bottom">
+					COPYRIGHT版权所有 设计开发 APEX
+				</div>
+			</div>
+		</div>
+		<!-- main 结束 -->
+</body>
+</html>
+

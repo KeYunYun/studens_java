@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.5" 
+	xmlns="http://java.sun.com/xml/ns/javaee" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
+	http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>CropS</servlet-name>
+    <servlet-class>gxa.servlet.CropS</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>CropS</servlet-name>
+    <url-pattern>/CropS</url-pattern>
+  </servlet-mapping>
+    <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>OperateS</servlet-name>
+    <servlet-class>gxa.servlet.OperateS</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>OperateS</servlet-name>
+    <url-pattern>/OperateS</url-pattern>
+  </servlet-mapping>
+    <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>MachineS</servlet-name>
+    <servlet-class>gxa.servlet.MachineS</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>MachineS</servlet-name>
+    <url-pattern>/MachineS</url-pattern>
+  </servlet-mapping>
+    <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>EmployeeS</servlet-name>
+    <servlet-class>gxa.servlet.EmployeeS</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>EmployeeS</servlet-name>
+    <url-pattern>/EmployeeS</url-pattern>
+  </servlet-mapping>
+  
+   <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>GreenHouseS</servlet-name>
+    <servlet-class>gxa.servlet.GreenHouseS</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>GreenHouseS</servlet-name>
+    <url-pattern>/GreenHouseS</url-pattern>
+  </servlet-mapping>
+  
+   <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>DataS</servlet-name>
+    <servlet-class>gxa.servlet.DataS</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>DataS</servlet-name>
+    <url-pattern>/DataS</url-pattern>
+  </servlet-mapping>
+  
+    <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>RecordS</servlet-name>
+    <servlet-class>gxa.servlet.RecordS</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>RecordS</servlet-name>
+    <url-pattern>/RecordS</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>GetwayS</servlet-name>
+    <servlet-class>gxa.servlet.GetwayS</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>GetwayS</servlet-name>
+    <url-pattern>/GetwayS</url-pattern>
+  </servlet-mapping>
+  
+   <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>AdminS</servlet-name>
+    <servlet-class>gxa.servlet.AdminS</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>AdminS</servlet-name>
+    <url-pattern>/AdminS</url-pattern>
+  </servlet-mapping>
+  
+   <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>ChartS</servlet-name>
+    <servlet-class>gxa.servlet.ChartS</servlet-class>
+  </servlet>
+  
+   <servlet-mapping>
+    <servlet-name>ChartS</servlet-name>
+    <url-pattern>/ChartS</url-pattern>
+  </servlet-mapping>
+  <welcome-file-list>
+    <welcome-file>index.jsp</welcome-file>
+  </welcome-file-list>
+</web-app>

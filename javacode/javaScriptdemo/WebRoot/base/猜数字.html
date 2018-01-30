@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>猜数字</title>
+<script type="text/javascript">
+	//全局变量
+	var init_num=parseInt(Math.random()*100);
+	function guess(){
+		var input=document.getElementById("num");
+		var p=document.getElementById("result");
+		var n=input.value;
+		if(n==""||isNaN(n)){
+		p.innerHTML="请输入值";
+		}else{
+			if(n<init_num){
+			p.innerHTML="小了";
+			}else if(n>init_num){
+			p.innerHTML="大了";
+			}else{
+			p.innerHTML="对了";
+			}
+		}
+	}
+</script>
+</head>
+<body>
+	<input type="text" id="num">
+	<input type="button" value="猜"
+	onclick="guess();">
+	<p id="result"></p>
+</body>
+</html>

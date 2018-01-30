@@ -1,0 +1,112 @@
+package gxa.servlet;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.sql.ResultSet;
+import java.util.Date;
+import javax.print.attribute.standard.DateTimeAtCompleted;
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import microsoft.sql.DateTimeOffset;
+import Conn.Conn;
+
+public class EmployeeS extends HttpServlet {
+    String option;
+    //String EmployeeType;
+    //String WorkYear;
+  
+    Conn conn;//һ����Ķ��������Ҫʹ�õı�������Ա������ֻ��һ������ʹ�õı����ֲ�
+	public EmployeeS() {
+		super();
+		conn = new Conn();//��Ա�������ڹ��췽���г�ʼ�� new
+	}
+
+	/**
+	 * Destruction of the servlet. <br>
+	 */
+	public void destroy() {
+		super.destroy(); // Just puts "destroy" string in log
+		// Put your code here
+	}
+
+
+	public void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+        option = request.getParameter("option");
+	    doPost(request, response);//��������Ҫ�ֶ��ڵ�ַ�����������в���
+	}
+
+
+	public void doPost(HttpServletRequest request, HttpServletResponse response)
+		throws ServletException, IOException {
+		request.setCharacterEncoding("utf-8");
+		option = request.getParameter("option");
+		response.setContentType("text/html");
+		response.setCharacterEncoding("utf-8");
+	    PrintWriter out = response.getWriter();
+		//������û����
+	    String sql = "";
+		if(option.equals("list")){
+			sql = "select * from Employee";
+			ResultSet rs = conn.select(sql);
+			request.setAttribute("rs", rs);//����õĽ���ŵ��û�������������ȡ���rs	
+			request.getRequestDispatcher("employee/list.jsp").forward(request, response);
+			//����û��������ת��ָ��ҳ��
+		}else if(option.equals("add")){	
+			String employeeNo = request.getParameter("employeeNo");
+			String employeeName = request.getParameter("employeeName");
+			String employeesex = request.getParameter("employeesex");
+			String employeebirthday = request.getParameter("employeebirthday");
+			String employeeType = request.getParameter("employeeType");
+			String workYear = request.getParameter("workYear");
+			String employeestate = request.getParameter("employeestate");
+			String mosterName = request.getParameter("mosterName");
+			sql = "INSERT INTO Employee(EmployeeNo,EmployeeName,Employeesex,Employeebirthday,EmployeeType,WorkYear,Employeestate,MosterName) VALUES('"+employeeNo+"','"+employeeName+"','"+employeesex+"','"+employeebirthday+"','"+employeeType+"','"+workYear+"','"+employeestate+"','"+mosterName+"')";
+			int rs = conn.update(sql);
+			if(rs>0){
+				out.println("<script>alert('�޸ĳɹ�');window.location.href='EmployeeS?option=list'</script>");
+			}else{
+				out.println("<script>alert('�޸�ʧ�ܣ���ݿ��ܲ�����');window.location.href='EmployeeS?option=list'</script>");
+			}
+			request.setAttribute("rs", rs);//����õĽ���ŵ��û�������������ȡ���rs	
+			request.getRequestDispatcher("employee/add.jsp").forward(request, response);
+		 
+		}else if(option.equals("update")){
+			String employeeNo = request.getParameter("employeeNo");
+			String employeeName = request.getParameter("employeeName");
+			String employeesex = request.getParameter("employeesex");
+			String employeebirthday = request.getParameter("employeebirthday");
+			String employeeType = request.getParameter("employeeType");
+			String workYear = request.getParameter("workYear");
+			String employeestate = request.getParameter("employeestate");
+			String mosterName = request.getParameter("mosterName");
+			sql = "update Employee set EmployeeNo='"+employeeNo+"',EmployeeName='"+employeeName+"',Employeesex='"+employeesex+"',Employeebirthday='"+employeebirthday+"',EmployeeType='"+employeeType+"',WorkYear='"+workYear+"',Employeestate='"+employeestate+"',MosterName='"+mosterName+"' where EmployeeNo='"+employeeNo+"'";
+			System.out.println(sql);
+			int rs = conn.update(sql);
+			if(rs>0){
+				out.println("<script>alert('修改成功');window.location.href='EmployeeS?option=list'</script>");
+			}else{
+				out.println("<script>alert('修改失败');window.location.href='EmployeeS?option=list'</script>");
+			}
+		
+		}else if(option.equals("find")){
+			String employeeNo = request.getParameter("employeeNo");
+			sql = "select * from Employee where EmployeeNo='"+employeeNo+"'";
+			ResultSet rs = conn.select(sql);
+			System.out.println(sql);
+			request.setAttribute("rs", rs);// ����õĽ���ŵ��û�������������ȡ���rs
+			request.getRequestDispatcher("employee/update.jsp").forward(request,
+					response);
+			// ����û��������ת��ָ��ҳ��
+		}
+		out.flush();
+		out.close();
+	}
+
+	public void init() throws ServletException {
+		// Put your code here
+	}
+
+}

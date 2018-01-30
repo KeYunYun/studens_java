@@ -1,0 +1,108 @@
+package gxa.servlet;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.sql.ResultSet;
+import java.util.Date;
+
+import javax.print.attribute.standard.DateTimeAtCompleted;
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import microsoft.sql.DateTimeOffset;
+
+import Conn.Conn;
+
+public class RecordS extends HttpServlet {
+    String option;
+    //String PlantDate;
+    //String PickData;
+  
+    Conn conn;//一个类的多个方法都要使用的变量做成员变量，只有一个方法使用的变量局部
+	public RecordS() {
+		super();
+		conn = new Conn();//成员变量都在构造方法中初始化 new
+	}
+
+	/**
+	 * Destruction of the servlet. <br>
+	 */
+	public void destroy() {
+		super.destroy(); // Just puts "destroy" string in log
+		// Put your code here
+	}
+
+
+	public void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+        option = request.getParameter("option");
+	    doPost(request, response);//当我们需要手动在地址栏输出参数进行测试
+	}
+
+
+	public void doPost(HttpServletRequest request, HttpServletResponse response)
+		throws ServletException, IOException {
+		request.setCharacterEncoding("utf-8");
+		option = request.getParameter("option");
+		response.setContentType("text/html");
+		response.setCharacterEncoding("utf-8");
+	    PrintWriter out = response.getWriter();
+		//代表向用户输出
+	    String sql = "";
+		if(option.equals("list")){
+			sql = "select * from Records";
+			ResultSet rs = conn.select(sql);
+			request.setAttribute("rs", rs);//将获得的结果集存放到用户的请求属性中取名叫rs	
+			request.getRequestDispatcher("records/list.jsp").forward(request, response);
+			//代表用户浏览器跳转到指定页面
+		}else if(option.equals("add")){	
+			String recondsTime = request.getParameter("recondsTime");
+			String mosterName = request.getParameter("mosterName");
+			String machineNo = request.getParameter("machineNo");
+			sql = "insert into Records(RecondsTime,MosterName,MachineNo) values('"+recondsTime+"','"+mosterName+"','"+machineNo+"')";
+			
+			//INSERT INTO Records(RecondsTime,MachineNo,MachineNo) VALUES('"+recondsTime+"','"+mosterName+"','"+machineNo+"'
+			int rs = conn.update(sql);
+			if(rs>0){
+				out.println("<script>alert('修改成功');window.location.href='RecordS?option=list'</script>");
+			}else{
+				out.println("<script>alert('修改失败，数据可能不存在');window.location.href='RecordS?option=list'</script>");
+			}
+			request.setAttribute("rs", rs);//将获得的结果集存放到用户的请求属性中取名叫rs	
+			request.getRequestDispatcher("records/add.jsp").forward(request, response);
+		 
+		}else if(option.equals("update")){
+			String recondsNo =request.getParameter("recondsNo");
+			String recondsTime = request.getParameter("recondsTime");
+			String mosterName = request.getParameter("mosterName");
+			String machineNo = request.getParameter("machineNo");
+		    sql = "update Records set  RecondsTime='"+recondsTime+"',MosterName='"+mosterName+"',MachineNo='"+machineNo+"'  where RecondsNo='"+recondsNo+"'";
+			System.out.println(sql);
+			int rs = conn.update(sql);
+			if(rs>0){
+				out.println("<script>alert('修改成功');window.location.href='RecordS?option=list'</script>");
+			}else{
+				out.println("<script>alert('修改失败，数据可能不存在');window.location.href='RecordS?option=list'</script>");
+			}
+		
+		}else if(option.equals("find")){
+			String recondsNo = request.getParameter("recondsNo");
+			sql = "select * from Records where RecondsNo='"+recondsNo+"'";
+			ResultSet rs = conn.select(sql);
+			System.out.println(sql);
+			request.setAttribute("rs", rs);// 将获得的结果集存放到用户的请求属性中取名叫rs
+			request.getRequestDispatcher("records/update.jsp").forward(request,
+					response);
+			// 代表用户浏览器跳转到指定页面
+		}
+		out.flush();
+		out.close();
+	}
+
+	public void init() throws ServletException {
+		// Put your code here
+	}
+
+}

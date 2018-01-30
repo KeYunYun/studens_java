@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8"/>
+	<classpathentry kind="lib" path="F:/myeclipe/code/java-json.jar/commons-beanutils-1.8.0.jar"/>
+	<classpathentry kind="lib" path="F:/myeclipe/code/java-json.jar/commons-collections-3.2.1.jar"/>
+	<classpathentry kind="lib" path="F:/myeclipe/code/java-json.jar/commons-lang-2.3.jar"/>
+	<classpathentry kind="lib" path="F:/myeclipe/code/java-json.jar/commons-logging-1.1.1.jar"/>
+	<classpathentry kind="lib" path="F:/myeclipe/code/java-json.jar/ezmorph-1.0.6.jar"/>
+	<classpathentry kind="lib" path="F:/myeclipe/code/java-json.jar/json-lib-2.4-jdk15.jar"/>
+	<classpathentry kind="lib" path="F:/myeclipe/code/gson-2.7.jar"/>
+	<classpathentry kind="lib" path="F:/myeclipe/code/commons-dbcp-1.4-bin/commons-dbcp-1.4/commons-dbcp-1.4.jar"/>
+	<classpathentry kind="lib" path="F:/myeclipe/code/commons-dbcp-1.4-bin/commons-dbcp-1.4/commons-dbcp-1.4-javadoc.jar"/>
+	<classpathentry kind="lib" path="F:/myeclipe/code/commons-dbcp-1.4-bin/commons-dbcp-1.4/commons-dbcp-1.4-sources.jar"/>
+	<classpathentry kind="lib" path="F:/myeclipe/code/commons-dbcp-1.4-bin/commons-dbcp-1.4/commons-pool-1.4.jar"/>
+	<classpathentry kind="lib" path="F:/myeclipe/code/mysql-connector-java-5.1.41/mysql-connector-java-5.1.41-bin.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

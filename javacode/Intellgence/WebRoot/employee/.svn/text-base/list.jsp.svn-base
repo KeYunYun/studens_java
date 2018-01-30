@@ -1,0 +1,103 @@
+<%@ page language="java" import="java.util.*" pageEncoding="utf-8"  contentType="text/html; charset=utf-8"  %>
+<%@page import="java.sql.ResultSet"%>
+
+<%
+
+String path = request.getContextPath();
+String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
+%>
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <base href="<%=basePath%>">
+    
+    <title>My JSP 'show.jsp' starting page</title>
+    
+	<meta http-equiv="pragma" content="no-cache">
+	<meta http-equiv="cache-control" content="no-cache">
+	<meta http-equiv="expires" content="0">    
+	<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+	<meta http-equiv="description" content="This is my page">
+	 <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/pintuer.css">
+    	 <style>
+	 
+ .ws > table  tr:nth-child(1) > td:nth-child(1){
+       width:120px;
+     
+      }
+         .ws > table  tr:nth-child(1) > td:nth-child(2){
+       width:80px;
+       
+      }
+         .ws > table  tr:nth-child(1) > td:nth-child(3){
+       width:80px;
+      }
+         .ws > table  tr:nth-child(1) > td:nth-child(4){
+       width:120px;
+      }
+         .ws > table  tr:nth-child(1) > td:nth-child(5){
+       width:110px;
+       
+      }
+       .ws > table  tr:nth-child(1) > td:nth-child(6){
+       width:110px;}
+       .ws > table  tr:nth-child(1) > td:nth-child(7){
+       width:110px;}
+       .ws > table  tr:nth-child(1) > td:nth-child(8){
+       width:110px;}
+        .ws > table  tr{
+        line-height:50px;
+        }
+         .ws > table  tr td{
+       border:#000 1px solid;
+        }
+         .ws > table  tr td a{
+        text-decoration: none;
+        color:#000;
+        }
+      .ws > table  tr td a:hover{color:#0C6;} 
+     
+	 </style>
+  </head>
+  
+  <body>
+  <div class="ws">
+ <table  class="ws_list" align="center">
+        <tr>
+          <td>员工编号</td>
+          <td>员工姓名</td>
+          <td>员工性别</td>
+          <td>员工生日</td>
+          <td>员工类型</td>
+          <td>工作年份</td>
+          <td>员工状态</td>
+          <td>上司姓名</td>
+          <td>操作</td>
+      </tr>
+    <%
+    ResultSet rs = (ResultSet)request.getAttribute("rs");
+    while(rs.next()){//如果结果集中还有下一条就 继续循环
+    %>
+       <!-- 下面这句表示在页面输出 -->
+      <tr>
+           <%String employeeNo = rs.getString(1);%>
+            <td><%= employeeNo%></td>
+          <td><%= rs.getString(2)%></td>
+          <td><%= rs.getString(3)%></td>
+          <td><%= rs.getDate(4)%></td>
+          <td><%= rs.getString(5)%></td>
+          <td><%= rs.getString(6)%></td>
+           <td><%= rs.getString(7)%></td>
+          <td><%= rs.getString(8)%></td>
+           <td  class="up"><a href="EmployeeS?option=find&employeeNo=<%=employeeNo%>">修改</a></td>
+      </tr>
+        
+       <%
+      }
+     %>
+    </table> 
+    </div>
+  </body>
+</html>

@@ -1,0 +1,113 @@
+package gxa.servlet;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.sql.ResultSet;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
+import javax.print.attribute.standard.DateTimeAtCompleted;
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import microsoft.sql.DateTimeOffset;
+
+import Conn.Conn;
+
+public class DataS extends HttpServlet {
+    String option;
+    //String PlantDate;
+    //String PickData;
+  
+    Conn conn;//一个类的多个方法都要使用的变量做成员变量，只有一个方法使用的变量局部
+	public DataS() {
+		super();
+		conn = new Conn();//成员变量都在构造方法中初始化 new
+	}
+
+	/**
+	 * Destruction of the servlet. <br>
+	 */
+	public void destroy() {
+		super.destroy(); // Just puts "destroy" string in log
+		// Put your code here
+	}
+
+
+	public void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+        option = request.getParameter("option");
+	    doPost(request, response);//当我们需要手动在地址栏输出参数进行测试
+	}
+
+
+	public void doPost(HttpServletRequest request, HttpServletResponse response)
+		throws ServletException, IOException {
+		request.setCharacterEncoding("utf-8");
+		option = request.getParameter("option");
+		response.setContentType("text/html");
+		response.setCharacterEncoding("utf-8");
+	    PrintWriter out = response.getWriter();
+		//代表向用户输出
+	    String sql = "";
+		if(option.equals("list")){
+			sql = "select * from Data";
+			ResultSet rs = conn.select(sql);
+			request.setAttribute("rs", rs);//将获得的结果集存放到用户的请求属性中取名叫rs	
+			request.getRequestDispatcher("data/list.jsp").forward(request, response);
+			//代表用户浏览器跳转到指定页面
+		}else if(option.equals("add")){	
+			String cropNo = request.getParameter("cropNo");
+			String varieties = request.getParameter("varieties");
+			String greenHouseNo = request.getParameter("greenHouseNo");
+			String employeeNo = request.getParameter("employeeNo");
+			String plantDate = request.getParameter("PlantDate");
+			String pickData = request.getParameter("PickData");	
+			sql = "INSERT INTO Crop(CropNo,Varieties,GreenHouseNo,EmployeeNo,PlantDate,PickData) VALUES('"+cropNo+"','"+varieties+"','"+greenHouseNo+"','"+employeeNo+"','"+plantDate+"','"+pickData+"')";
+			int rs = conn.update(sql);
+			if(rs>0){
+				out.println("<script>alert('修改成功');window.location.href='MachineS?option=list'</script>");
+			}else{
+				out.println("<script>alert('修改失败，数据可能不存在');window.location.href='MachineS?option=list'</script>");
+			}
+			request.setAttribute("rs", rs);//将获得的结果集存放到用户的请求属性中取名叫rs	
+			request.getRequestDispatcher("crop/add.jsp").forward(request, response);
+		 
+		}else if(option.equals("update")){
+			String cropNo = request.getParameter("cropNo");
+			String varieties = request.getParameter("varieties");
+			String greenHouseNo = request.getParameter("greenHouseNo");
+			String employeeNo = request.getParameter("employeeNo");
+			String plantDate = request.getParameter("PlantDate");
+			String pickData = request.getParameter("PickData");	
+			sql = "update Crop set CropNo='"+cropNo+"',Varieties='"+varieties+"',GreenHouseNo='"+greenHouseNo+"',EmployeeNo='"+employeeNo+"',PlantDate='"+plantDate+"',PickData='"+pickData+"' where CropNo='"+cropNo+"'";
+			System.out.println(sql);
+			int rs = conn.update(sql);
+			if(rs>0){
+				out.println("<script>alert('修改成功');window.location.href='CropS?option=list'</script>");
+			}else{
+				out.println("<script>alert('修改失败，数据可能不存在');window.location.href='CropS?option=list'</script>");
+			}
+		
+		}else if(option.equals("find")){
+			String cropNo = request.getParameter("cropNo");
+			sql = "select * from Crop where CropNo='"+cropNo+"'";
+			ResultSet rs = conn.select(sql);
+			System.out.println(sql);
+			request.setAttribute("rs", rs);// 将获得的结果集存放到用户的请求属性中取名叫rs
+			request.getRequestDispatcher("crop/update.jsp").forward(request,
+					response);
+			// 代表用户浏览器跳转到指定页面
+		}
+		out.flush();
+		out.close();
+	}
+
+	public void init() throws ServletException {
+		// Put your code here
+	}
+
+}

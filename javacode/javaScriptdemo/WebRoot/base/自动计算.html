@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="../js/jquery-3.1.1.js">
+</script>
+<script type="text/javascript">
+	$(function(){
+		$("button").click(auto_jc);
+	});
+	function auto_jc(){
+		var $texts=$(":text");
+		var i=0;
+		var id=setInterval(function() {
+			if(i==$texts.length){
+				clearInterval(id);
+				
+			}
+		var jc=Math.round(Math.random()*100);
+		//模拟光标切入事件，然后给这个框设置值
+		$texts.eq(i++).trigger("focus").val(jc);
+		}, 1000);
+	};
+</script>
+</head>
+<body>
+	<button>自动算节操</button>
+	<p>
+		范传奇：<input type="text">
+	</p>
+	<p>
+		王老师：<input type="text">
+	</p>
+	<p>
+		苍老师：<input type="text">
+	</p>
+	<p>
+		李老师：<input type="text">
+	</p>
+	<p>
+		称老师：<input type="text">
+	</p>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+	<script type="text/javascript">
+		function f1(){
+			var teacher=new Object();
+			teacher.name="苍老师";//属性
+			teacher.age=40;
+			teacher.work=function(){//方法
+				alert("wo java");
+			};
+			
+			alert(teacher.name+","+teacher.age);
+			teacher.work();
+		}
+		function f2(){
+		var s=new Student("张三",20);
+		alert(s.name+","+s.age);
+		s.work;
+		}
+		function Student(name,age){
+			this.name=name;
+			this.age=age;
+			this.work=function(){
+				alert(学Java);
+			}		
+		}
+		function f3(){
+			var programmer={
+			"name":"李四",
+			"age":25,
+			"work": function(){
+			alert("我学Java")
+				}
+			};
+			alert(programmer.name+","+programmer.age);
+			programmer.work;
+		}
+	</script>
+</head>
+<body>
+	<button onclick="f1();">创建对象方法1</button>
+	<button onclick="f2();">创建对象方法2</button>
+	<button onclick="f2();">创建对象方法3</button>
+</body>
+</html>

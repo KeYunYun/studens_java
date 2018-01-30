@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+	<style type="text/css">
+		ul{
+			list-style-type: none;
+			boeder:2px solid #ccc;
+			width:480px;
+			height:360px;
+			margin:0;
+			padding:0;
+		}
+		li{
+			width:480px;
+			height:360px;
+			margin:0;
+			padding:0;
+		}
+		.show{
+			display:block;
+		}
+		.hide{
+			display:none;
+		}
+	</style>
+	<script type="text/javascript">
+		var index=0;
+		function start(){
+			setInterval(function() {
+				var ul=document.getElementById("photos");
+				var lis=ul.getElementsByTagName("li");
+				for(var i=0;i<lis.length;i++){
+					lis[i].className="hide";
+				}
+				index++;
+				lis[index%lis.length].className="show";
+			}, 1000)
+		}
+	</script>
+</head>
+<body onclick="start();">
+	<ul id="photos">
+		<li class="hide"> <img  src="../images/f1.jpg" width="360px" height="480px"></li>
+		<li class="show"> <img  src="../images/f2.jpg"width="360px" height="480px"></li>
+		<li class="hide"> <img  src="../images/f3.jpg"width="360px" height="480px"></li>
+		<li class="hide"> <img src="../images/f4.jpg"width="360px" height="480px"></li>
+	</ul>
+</body>
+</html>
